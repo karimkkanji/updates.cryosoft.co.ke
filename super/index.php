@@ -1,3 +1,12 @@
+<?php
+require '_cred.php';
+session_start();
+
+if(isset($_SESSION['username'])){
+    header("location:home.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -28,12 +37,37 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
+                                    <?php
+                                    if(isset($_POST['signin'])){
+                                        $email=$_POST['email'];
+                                        $pass=md5($_POST['password']);
+                                        $sql = "SELECT username, password,level FROM admins WHERE username='$email' AND password='$pass'";
+                                        $result = $conn->query($sql);
+                                        if($result->num_rows>0){
+                                            while($row = $result->fetch_assoc()){
+                                                $_SESSION['username']=$row['username'];
+                                                $_SESSION['usertype']=$row['level'];
+                                                header('location:home.php');
+                                            }
+                                            echo "<div class=\"alert alert-success\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Successfully logged in!</b> You are being logged in, in a few!</div>";
+                                        }
+                                        else{
+                                            echo"<div class=\"alert alert-danger\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Unable to log in!</b> The details you have entered are incorrect!</div>";
+                                        }
+                                    }
+                                    ?>
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Login.</h4>
                                     </div>
-                                    <form class="user">
-                                        <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email"></div>
-                                        <div class="form-group"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password"></div><button class="btn btn-primary btn-block text-white btn-user" type="submit">Login</button>
+                                    <form class="user" method="post" action="">
+                                        <div class="form-group"><input class="form-control form-control-user"
+                                                                       type="text" id="exampleInputEmail"
+                                                                       aria-describedby="emailHelp"
+                                                                       placeholder="Enter Username" name="email"></div>
+                                        <div class="form-group"><input class="form-control form-control-user"
+                                                                       type="password" id="exampleInputPassword"
+                                                                       placeholder="Password" name="password">
+                                        </div><button class="btn btn-primary btn-block text-white btn-user" type="submit" name="signin">Login</button>
                                         <hr>
                                     </form><small>--Login is only restricted to Cryosoft Staff Only.</small>
                                     <div class="text-center"></div>

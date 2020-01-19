@@ -11,7 +11,7 @@ if($_SERVER['HTTP_HOST']==='localhost'){
     $conn = new mysqli('localhost','root','','updates');
 }
 else if($_SERVER['HTTP_HOST']==='updates.cryosoft.co.ke'){
-    $conn = new mysqli('den1.mysql6.gear.host', 'updatescry', 'Uz078j-Lfb!7', 'updatescry');
+    $conn = new mysqli('den1.mysql4.gear.host', 'updatescry', 'Uz078j-Lfb!7', 'updatescry');
 }
 else{
     $conn = new mysqli('localhost','root','','updates');
