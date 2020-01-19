@@ -26,7 +26,7 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects.html"><i class="fas fa-table"></i><span>Projects</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects.php"><i class="fas fa-table"></i><span>Projects</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>

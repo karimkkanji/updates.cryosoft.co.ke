@@ -1,6 +1,5 @@
 <?php
-$conn = new mysqli('localhost', 'root', '','updates');
-
+require 'super/_cred.php';
 header("Content-Type:application/json");
 
 if (isset($_GET['app_name']) && $_GET['app_name']!="") {
