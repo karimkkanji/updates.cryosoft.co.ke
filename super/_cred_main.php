@@ -11,7 +11,7 @@ if($_SERVER['HTTP_HOST']==='localhost'){
     //$conn = new mysqli('den1.mysql6.gear.host','cryosoft','Wj70418?V8?Q','cryosoft');
     $conn = new mysqli('localhost','root','','projects');
     }
-    else if($_SERVER['HTTP_HOST']==='cryosoft.co.ke'){
+    else if($_SERVER['HTTP_HOST']==='updates.cryosoft.co.ke'){
     //place server config here for external hosting
     $conn = new mysqli('den1.mysql6.gear.host','cryosoft','Wj70418?V8?Q','cryosoft');
     }
