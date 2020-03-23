@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])){
     <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-dark">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
