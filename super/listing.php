@@ -1,8 +1,6 @@
 <?php
 require '_cred_main.php';
 session_start();
-date_default_timezone_set("Africa/Nairobi");
-
 if(!isset($_SESSION['username'])){
     header("location:index.php");
 }
@@ -54,21 +52,21 @@ else{
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-download"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Updates | Cryosoft</span></div>
+                    <div class="sidebar-brand-icon"><img src='assets/img/colored_transparent_logo.png' height="60px"></div>
+                    <div class="sidebar-brand-text mx-3"><span>Updates</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link"  href="home.php"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="projects.php"><i class="fas fa-table"></i><span>Projects</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="listing.php"><i class="fas fa-check"></i><span>Cryosoft Project Listing</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="javascript:void(0)"><i class="fas fa-check"></i><span>Cryosoft Project Listing</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -204,6 +202,7 @@ else{
                                     $project_lead = $_POST["project_lead_update"];
                                     $project_stage = $_POST["stage_update"];
                                     $project_description = $_POST["description_update"];
+                                    date_default_timezone_set("Africa/Nairobi");
                                         $sql = "UPDATE projects_list SET name='$project_name',link='$project_link',description='$project_description',publisher='$project_lead',stage='$project_stage',date_modified=NOW() WHERE id='$appid'";
                                     if ($conn->query($sql) === TRUE) {
                                         echo "<div class='alert alert-success'>Project $project_name updated successfully!</div>";
@@ -250,6 +249,7 @@ else{
                                 $project_lead = $_POST["project_lead"];
                                 $project_stage = $_POST["stage"];
                                 $project_description = $_POST["description"];
+                                date_default_timezone_set("Africa/Nairobi");
                                 $stmt->bind_param("sssss", $project_name,$project_link,$project_description,$project_lead,$project_stage);
                                 if ($stmt->execute()) {
                                     echo "<div class='alert alert-success'>Project has been added successfully!</div>";
@@ -339,7 +339,7 @@ else{
     </div>
     <footer class="bg-white sticky-footer">
         <div class="container my-auto">
-            <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft 2019</span></div>
+            <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft <?php echo date("Y");?></span></div>
         </div>
     </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>

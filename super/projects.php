@@ -26,18 +26,18 @@ if(!isset($_SESSION['username'])){
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-download"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Updates | Cryosoft</span></div>
+                    <div class="sidebar-brand-icon"><img src='assets/img/colored_transparent_logo.png' height="60px"></div>
+                    <div class="sidebar-brand-text mx-3"><span>Updates</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="home.php"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fas fa-table"></i><span>Projects</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="javascript:void(0)"><i class="fas fa-table"></i><span>Projects</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="listing.php"><i class="fas fa-check"></i><span>Cryosoft Project Listing</span></a></li>
@@ -132,7 +132,7 @@ if(!isset($_SESSION['username'])){
         </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft 2019</span></div>
+                <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft <?php echo date("Y");?></span></div>
             </div>
         </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>

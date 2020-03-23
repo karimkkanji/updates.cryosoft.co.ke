@@ -30,10 +30,6 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Dashboard - Updates | Cryosoft</title>
     <link rel="icon" type="image/png" sizes="308x303" href="assets/img/colored_transparent_logo.png">
-    <link rel="icon" type="image/png" sizes="308x303" href="assets/img/colored_transparent_logo.png">
-    <link rel="icon" type="image/png" sizes="308x303" href="assets/img/colored_transparent_logo.png">
-    <link rel="icon" type="image/png" sizes="308x303" href="assets/img/colored_transparent_logo.png">
-    <link rel="icon" type="image/png" sizes="308x303" href="assets/img/colored_transparent_logo.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
@@ -42,15 +38,15 @@ else{
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+        <nav class="navbar navbar-dark darkmode-ignore align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-download"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Updates | Cryosoft</span></div>
+                    <div class="sidebar-brand-icon"><img src='assets/img/colored_transparent_logo.png' height="60px"></div>
+                    <div class="sidebar-brand-text mx-3"><span>Updates</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="javascript:void(0)"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="projects.php"><i class="fas fa-table"></i><span>Projects</span></a></li>
@@ -237,7 +233,7 @@ else{
     </div>
     <footer class="bg-white sticky-footer">
         <div class="container my-auto">
-            <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft 2019</span></div>
+            <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft <?php echo date("Y");?></span></div>
         </div>
     </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
