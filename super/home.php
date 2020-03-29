@@ -54,6 +54,9 @@ else{
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="listing.php"><i class="fas fa-check"></i><span>Cryosoft Project Listing</span></a></li>
                 </ul>
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="covid19.php"><i class="fas fa-bug"></i><span>Covid-19 Self Test</span></a></li>
+                </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
         </nav>
