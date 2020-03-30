@@ -3,6 +3,8 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
     CURLOPT_URL => "https://api.gearhost.com/v1/cloudsites",
+    CURLOPT_SSL_VERIFYHOST => false,
+    CURLOPT_SSL_VERIFYPEER=> false,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
