@@ -33,18 +33,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-        <link rel="shortcut icon" href="./img/favicon.png">
+        <link rel="shortcut icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>Cryosoft APIs</title>
+        <title>COVID19 Kenya Statistics API - Cryosoft APIs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -62,7 +62,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#welcome-to-cryosofts-apis" tabindex="0" class="md-skip">
+      <a href="#http-methods" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -94,9 +94,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="." title="Cryosoft APIs" aria-label="Cryosoft APIs" class="md-header-nav__button md-logo">
+        <a href=".." title="Cryosoft APIs" aria-label="Cryosoft APIs" class="md-header-nav__button md-logo">
           
-          <img src="images/colored_transparent_logo.png" height="25px"/>
+          <img src="../images/colored_transparent_logo.png" height="25px"/>
           
         </a>
       </div>
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Home
+                COVID19 Kenya Statistics API
               
             </span>
           
@@ -164,15 +164,27 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="." title="Cryosoft APIs" class="md-nav__button md-logo">
+    <a href=".." title="Cryosoft APIs" class="md-nav__button md-logo">
       
-      <img src="./images/colored_transparent_logo.png" height="25px">
+      <img src="../images/colored_transparent_logo.png" height="25px">
       
     </a>
     Cryosoft APIs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
     
       
       
@@ -185,37 +197,54 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home
+        COVID19 Kenya Statistics API
       </label>
     
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
-      Home
+    <a href="./" title="COVID19 Kenya Statistics API" class="md-nav__link md-nav__link--active">
+      COVID19 Kenya Statistics API
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-a-list-of-all-applications-available" class="md-nav__link">
-    Getting a list of all Applications available
+  <a href="#http-methods" class="md-nav__link">
+    HTTP Methods
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-an-app-information" class="md-nav__link">
-    Getting an app information
+  <a href="#api-location" class="md-nav__link">
+    API Location
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution" class="md-nav__link">
+    Attribution
   </a>
   
 </li>
@@ -228,18 +257,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="covid19/" title="COVID19 Kenya Statistics API" class="md-nav__link">
-      COVID19 Kenya Statistics API
-    </a>
   </li>
 
     
@@ -269,22 +286,41 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-a-list-of-all-applications-available" class="md-nav__link">
-    Getting a list of all Applications available
+  <a href="#http-methods" class="md-nav__link">
+    HTTP Methods
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-an-app-information" class="md-nav__link">
-    Getting an app information
+  <a href="#api-location" class="md-nav__link">
+    API Location
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution" class="md-nav__link">
+    Attribution
   </a>
   
 </li>
@@ -306,20 +342,40 @@
               
                 
                 
-                <p><img src="./images/colored_transparent_logo.png" height="100px"></p>
-<h1 id="welcome-to-cryosofts-apis">Welcome to Cryosoft's Apis</h1>
-<p>Cryosoft is committed to having your applications upto date. You can keep upto speed with our app versions using our apis in the case you want to use our applications.</p>
-<p>The APIs enlisted here are all REST apis and give results in the form of JSON.</p>
-<h2 id="getting-a-list-of-all-applications-available">Getting a list of all Applications available</h2>
-<p>To get a list of all applications, you simply have to make a GET request to 
- <code>/api</code> which will give you a JSON of all applications currently being managed and versioned.</p>
-<p>You can try with the following link:</p>
-<p><a href="https://updates.cryosoft.co.ke/api"><code>https://updates.cryosoft.co.ke/api</code></a></p>
-<h2 id="getting-an-app-information">Getting an app information</h2>
-<p>To get a complete List of information concerning an application, make a GET request to 
-<code>/api/[app-name]</code> where <code>[app-name]</code> is the name of the application you wish to get the information for.</p>
-<p>An example of such a request is:</p>
-<p><a href="https://updates.cryosoft.co.ke/api/masiri"><code>https://updates.cryosoft.co.ke/api/masiri</code></a></p>
+                  <h1>COVID19 Kenya Statistics API</h1>
+                
+                <p>We have set up an API that will allow you to get COVID19 Kenyan updates and allow you to make your own dashboard.</p>
+<h3 id="http-methods">HTTP Methods</h3>
+<p>The API can be accesssed though <code>GET</code> HTTP method</p>
+<h3 id="api-location">API Location</h3>
+<p>The API can be consumed here at:</p>
+<p><a href="https://covid19.cryosoft.co.ke/api/"><code>https://covid19.cryosoft.co.ke/api/</code></a></p>
+<h3 id="example-response">Example Response</h3>
+<p>The response of the API is as follows.</p>
+<pre><code>{
+&quot;country&quot;: &quot;Kenya&quot;,
+&quot;cases&quot;: 2216,
+&quot;todayCases&quot;: 123,
+&quot;deaths&quot;: 74,
+&quot;todayDeaths&quot;: 3,
+&quot;recovered&quot;: 553,
+&quot;active&quot;: 1589,
+&quot;critical&quot;: 7,
+&quot;casesPerOneMillion&quot;: 41,
+&quot;deathsPerOneMillion&quot;: 1,
+&quot;totalTests&quot;: 85058,
+&quot;testsPerOneMillion&quot;: 1585,
+&quot;url&quot;: &quot;https://covid19.cryosoft.co.ke/api/&quot;,
+&quot;documentation&quot;: &quot;https://updates.cryosoft.co.ke/documentation/#covid19&quot;
+}
+</code></pre>
+
+<h3 id="authentication">Authentication</h3>
+<p>The COVID19 Statistics doesn't require any authentication to get the data.</p>
+<h3 id="attribution">Attribution</h3>
+<p>Please attribute the API to Cryosoft Corporation by linking it as follows in your dashboard:</p>
+<pre><code>API provided by: &lt;a href=&quot;https://cryosoft.co.ke&quot;&gt; by Cryosoft Corporation&lt;/a&gt;
+</code></pre>
                 
                   
                 
@@ -341,20 +397,20 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-        
-          <a href="covid19/" title="COVID19 Kenya Statistics API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  Previous
                 </span>
-                COVID19 Kenya Statistics API
+                Home
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>
@@ -375,7 +431,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/CryosoftCorporation" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
@@ -389,9 +445,9 @@
       
     </div>
     
-      <script src="assets/javascripts/application.c33a9706.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.1",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
     
   </body>
