@@ -33,7 +33,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-        <link rel="shortcut icon" href="../img/favicon.png">
+      <link rel="shortcut icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
@@ -243,6 +243,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#string-data-types-requested" class="md-nav__link">
+    String Data Types [Requested]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#attribution" class="md-nav__link">
     Attribution
   </a>
@@ -319,6 +326,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#string-data-types-requested" class="md-nav__link">
+    String Data Types [Requested]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#attribution" class="md-nav__link">
     Attribution
   </a>
@@ -372,6 +386,30 @@
 
 <h3 id="authentication">Authentication</h3>
 <p>The COVID19 Statistics doesn't require any authentication to get the data.</p>
+<h3 id="string-data-types-requested">String Data Types [Requested]</h3>
+<p>You can receive the data that is in form of type Integer as type string if need be. You can simply use the following endpoint by simply adding
+a query string <code>format=string</code> at the end of the end point as follows:</p>
+<p><a href="https://covid19.cryosoft.co.ke/api/?format=string"><code>https://covid19.cryosoft.co.ke/api/?format=string</code></a></p>
+<p>An example response will be as follows:</p>
+<pre><code>{
+&quot;country&quot;: &quot;Kenya&quot;,
+&quot;cases&quot;: &quot;4044&quot;,
+&quot;todayCases&quot;: &quot;0&quot;,
+&quot;deaths&quot;: &quot;107&quot;,
+&quot;todayDeaths&quot;: &quot;0&quot;,
+&quot;recovered&quot;: &quot;1353&quot;,
+&quot;active&quot;: &quot;2584&quot;,
+&quot;critical&quot;: &quot;7&quot;,
+&quot;casesPerOneMillion&quot;: &quot;75&quot;,
+&quot;deathsPerOneMillion&quot;: &quot;2&quot;,
+&quot;totalTests&quot;: &quot;121956&quot;,
+&quot;testsPerOneMillion&quot;: &quot;2270&quot;,
+&quot;url&quot;: &quot;https://covid19.cryosoft.co.ke/api/&quot;,
+&quot;documentation&quot;: &quot;https://updates.cryosoft.co.ke/documentation/covid19/&quot;,
+&quot;request_id&quot;: &quot;9e64ca30ac1e277c&quot;
+}
+</code></pre>
+
 <h3 id="attribution">Attribution</h3>
 <p>Please attribute the API to Cryosoft Corporation by linking it as follows in your dashboard:</p>
 <pre><code>API provided by: &lt;a href=&quot;https://cryosoft.co.ke&quot;&gt; by Cryosoft Corporation&lt;/a&gt;
@@ -420,14 +458,10 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 Cryosft Corporation
+            Copyright &copy; 2020 Cryosoft Corporation
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
+        
       </div>
       
   <div class="md-footer-social">
