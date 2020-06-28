@@ -46,6 +46,9 @@ if(!isset($_SESSION['username'])){
                     <li class="nav-item" role="presentation"><a class="nav-link" href="covid19.php"><i class="fas fa-bug"></i><span>Covid-19 Self Test</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="dit.php"><i class="fas fa-car"></i><span>Drive In Theory Self Test</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="cloudsites.php"><i class="fas fa-cloud"></i><span>Cloudsites</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>

@@ -5,7 +5,7 @@ session_start();
 if(!isset($_SESSION['username'])){
     header("location:index.php");
 }
-$sql = "SELECT * FROM `questions` ORDER BY id DESC LIMIT 1";
+$sql = "SELECT * FROM `ditself` ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
@@ -53,10 +53,10 @@ if ($result->num_rows > 0) {
                     <li class="nav-item" role="presentation"><a class="nav-link" href="listing.php"><i class="fas fa-check"></i><span>Cryosoft Project Listing</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="covid19.php"><i class="fas fa-bug"></i><span>Covid-19 Self Test</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="covid19.php"><i class="fas fa-bug"></i><span>Covid-19 Self Test</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="dit.php"><i class="fas fa-car"></i><span>Drive In Theory Self Test</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="dit.php"><i class="fas fa-car"></i><span>Drive In Theory Self Test</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="cloudsites.php"><i class="fas fa-cloud"></i><span>Cloudsites</span></a></li>
@@ -106,8 +106,8 @@ if ($result->num_rows > 0) {
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 card card-body" id="questions-here">
-                <h3>COVID-19 Self Test<a class="btn btn-primary btn-sm float-right" role="button" href="javascript:void(0)" onclick="fillData()"><i class="fa fa-refresh fa-sm text-white-50"></i> Fill from Existing</a> </h3>
-                    <div id="question-1"><span><strong>Note:</strong>&nbsp;A weight of&nbsp;<strong>0</strong>&nbsp;suggests&nbsp;<strong class="text-success">No infection by COVID-19</strong>&nbsp; and a weight of&nbsp;<strong>1</strong>&nbsp;suggests&nbsp;<strong class="text-danger">COVID-19 Infection</strong></span>
+                <h3>Drive In Theory Self Test<a class="btn btn-primary btn-sm float-right" role="button" href="javascript:void(0)" onclick="fillData()"><i class="fa fa-refresh fa-sm text-white-50"></i> Fill from Existing</a> </h3>
+                    <div id="question-1"><span><strong>Note:</strong>&nbsp;A weight of&nbsp;<strong>0</strong>&nbsp;suggests&nbsp;<strong class="text-danger">Incorrect / False</strong>&nbsp; and a weight of&nbsp;<strong>1</strong>&nbsp;suggests&nbsp;<strong class="text-success">True / Correct Answer</strong></span>
                         <div id="removeFill"><button class="btn btn-primary float-right btn-sm" type="button" style="margin: 10px 0;" onclick="addQuestion()"><i class="fa fa-plus"></i></button><label style="margin: 10px 0;"><strong>Question 1<br></strong></label><input class="form-control"
                                 type="text" id="q1" onfocusout="changeJson(this.id,this.value)">
                             <div class="form-row">
@@ -244,7 +244,7 @@ let submitOutput =()=>{
                 $("#confirm-changes").modal("hide");
             }
         };
-        xmlhttp.open("POST","./addquestions.php",true);
+        xmlhttp.open("POST","./addquestions-dit.php",true);
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp.send("jsonGot="+encodeURI(outp));
 }
