@@ -36,34 +36,7 @@ if ($result->num_rows > 0) {
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
-            <div class="container-fluid d-flex flex-column p-0">
-                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon"><img src='assets/img/colored_transparent_logo.png' height="60px"></div>
-                    <div class="sidebar-brand-text mx-3"><span>Updates</span></div>
-                </a>
-                <hr class="sidebar-divider my-0">
-                <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="home.php"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="javascript:void(0)"><i class="fas fa-table"></i><span>Projects</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="listing.php"><i class="fas fa-check"></i><span>Cryosoft Project Listing</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="covid19.php"><i class="fas fa-bug"></i><span>Covid-19 Self Test</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="dit.php"><i class="fas fa-car"></i><span>Drive In Theory Self Test</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="cloudsites.php"><i class="fas fa-cloud"></i><span>Cloudsites</span></a></li>
-                </ul>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
-            </div>
-        </nav>
+       <?php require 'navbar.php';?>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
@@ -133,12 +106,16 @@ if ($result->num_rows > 0) {
                 <div class="col-md-3"></div>
     <button class="btn btn-success" type="button" style="bottom:10px; right:10px; position: fixed; z-index: 100&quot;" onclick="checkIfEmpty()">Save Changes</button>
             </div>
-        <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft <?php echo date("Y");?></span></div>
-            </div>
-        </footer>
-    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+
+        </div>
+<!--            <footer class="bg-white sticky-footer">-->
+<!--                <div class="container my-auto">-->
+<!--                    <div class="text-center my-auto copyright"><span>Copyright © Updates | Cryosoft --><?php //echo date("Y");?><!--</span></div>-->
+<!--                </div>-->
+<!--            </footer>-->
+        </div>
+            <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
     <div
         class="modal fade" role="dialog" tabindex="-1" id="confirm-changes">
         <div class="modal-dialog modal-dialog-centered" role="document">
