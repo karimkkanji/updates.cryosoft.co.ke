@@ -138,9 +138,9 @@ else{
                             <div class="card-body">
                                 <?php
                                 if(isset($_POST['submit'])) {
-                                    $appid = $_POST["app-id"];
-                                    $changelog = $_POST['change_log_update'];
-                                        $app_version = $_POST['app_version-update'];
+                                    $appid = mysqli_real_escape_string($conn,$_POST["app-id"]);
+                                    $changelog = mysqli_real_escape_string($conn,$_POST['change_log_update']);
+                                        $app_version = mysqli_real_escape_string($conn,$_POST['app_version-update']);
                                     $sql = "UPDATE app_updates SET app_version='$app_version',app_change_log='$changelog',date_updated= NOW() WHERE id='$appid'";
 
                                     if ($conn->query($sql) === TRUE) {

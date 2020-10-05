@@ -178,12 +178,12 @@ else{
                             <div class="card-body">
                                 <?php
                                 if(isset($_POST['submit'])) {
-                                    $appid = $_POST["project_id"];
-                                    $project_name = $_POST["name_update"];
-                                    $project_link = $_POST["url_update"];
-                                    $project_lead = $_POST["project_lead_update"];
-                                    $project_stage = $_POST["stage_update"];
-                                    $project_description = $_POST["description_update"];
+                                    $appid = mysqli_real_escape_string($conn,$_POST["project_id"]);
+                                    $project_name = mysqli_real_escape_string($conn,$_POST["name_update"]);
+                                    $project_link = mysqli_real_escape_string($conn,$_POST["url_update"]);
+                                    $project_lead = mysqli_real_escape_string($conn,$_POST["project_lead_update"]);
+                                    $project_stage = mysqli_real_escape_string($conn,$_POST["stage_update"]);
+                                    $project_description = mysqli_real_escape_string($conn,$_POST["description_update"]);
                                     date_default_timezone_set("Africa/Nairobi");
                                         $sql = "UPDATE projects_list SET name='$project_name',link='$project_link',description='$project_description',publisher='$project_lead',stage='$project_stage',date_modified=NOW() WHERE id='$appid'";
                                     if ($conn->query($sql) === TRUE) {
