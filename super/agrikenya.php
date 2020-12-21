@@ -82,7 +82,7 @@ if(!isset($_SESSION['username'])){
                                     $dealprice=$_POST['deal-price'];
                                     $availabilitycheck =(isset($_POST['availability_check'])? '1':'0');
                                     $dealcheck =(isset($_POST['deal_check'])? '1':'0');
-                                    $sql = "UPDATE products SET unit='$itemunit', price='$itemprice',deal='$availabilitycheck', availability='$availabilitycheck',deal_price='$dealprice' WHERE id='$itemid'";
+                                    $sql = "UPDATE products SET unit='$itemunit', price='$itemprice',deal='$dealcheck', availability='$availabilitycheck',deal_price='$dealprice' WHERE id='$itemid'";
 
                                     if ($conn->query($sql) === TRUE) {
                                         echo "<div class='alert alert-success'>Record updated successfully!</div>";
