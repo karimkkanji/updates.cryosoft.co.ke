@@ -213,15 +213,22 @@ if(!isset($_SESSION['username'])){
                                 if ($result->num_rows > 0) {
                                     // output data of each row
                                     while($row = $result->fetch_assoc()) {
+
                                     echo " <tr> <td>".$row['id']."</td>
                                         <td>".$row['notice_title']."</td>
                                         <td>".$row['notice_color']."
                                         <td><i class='fas fa-square' style='color: ".$row['background_hex']."'></i>&nbsp".$row['background_hex']."</td>
                                         <td><i class='fas fa-square' style='color: ".$row['text_hex']."'></i>&nbsp".$row['text_hex']."</td>
                                         <td>".$row['notice_message']."</td>
-                                        <td><a onclick='deleteRecord(".$row['id'].")' class='text-danger' href='javascript:void(0)'><i class='fa fa-trash'></i> </a>&nbsp;<a onclick='unviewRecord(".$row['id'].")' class='text-danger' href='javascript:void(0)'><i class='fa fa-eye-slash'></i> </a></td>
-                                        
-                                    </tr>";
+                                        <td><a onclick='deleteRecord(".$row['id'].")' class='text-danger' href='javascript:void(0)'><i class='fa fa-trash'></i> </a>&nbsp;";
+                                        if($row["visibility"]=='visible'){
+                                            echo "<a onclick='unviewRecord(".$row['id'].", \"true\")' class='text-danger' href='javascript:void(0)'><i class='fa fa-eye-slash'></i> </a></td>";
+                                        }
+                                        else{
+                                            echo "<a onclick='unviewRecord(".$row['id'].", \"false\")' class='text-danger' href='javascript:void(0)'><i class='fa fa-eye'></i> </a></td>";
+                                        }
+
+                                     echo "</tr>";
                                     }
                                 } else {
                                 echo "0 results";
@@ -260,6 +267,19 @@ if(!isset($_SESSION['username'])){
             xmlhttp.open("POST", "./handleDelete.php", true);
             xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xmlhttp.send("id="+id);
+
+        }
+        let unviewRecord = (id,visib) => {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("messageDeleteHere").innerHTML = this.responseText;
+                    location.reload();
+                }
+            };
+            xmlhttp.open("POST", "./handleUnview.php", true);
+            xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlhttp.send("id="+id+"&visibility="+visib);
 
         }
     </script>
