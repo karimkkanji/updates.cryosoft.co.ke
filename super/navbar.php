@@ -27,6 +27,9 @@ switch ($filename) {
     case 'notices.php':
         $notices = "active";
         break;
+    case 'agrikenya.php':
+        $agrikenya = "active";
+        break;
 }
 
 ?>
@@ -58,6 +61,9 @@ switch ($filename) {
         </ul>
         <ul class="nav navbar-nav text-light" id="accordionSidebar">
             <li class="nav-item" role="presentation"><a class="nav-link <?php echo $notices;?>" href="notices.php"><i class="fa fa-envelope"></i><span>Site Notices</span></a></li>
+        </ul>
+        <ul class="nav navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item" role="presentation"><a class="nav-link <?php echo $agrikenya;?>" href="agrikenya.php"><i class="fa fa-tree"></i><span>Agrikenya Prices</span></a></li>
         </ul>
         <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
     </div>
