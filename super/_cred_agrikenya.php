@@ -11,7 +11,7 @@ if($_SERVER['HTTP_HOST']==='localhost'){
     //$conn = new mysqli('den1.mysql6.gear.host','cryosoft','Wj70418?V8?Q','cryosoft');
     $conn = new mysqli('localhost','root','','agrikenya');
     }
-else if($_SERVER['HTTP_HOST']==='agrikenya.cryosoft.co.ke'){
+else if($_SERVER['HTTP_HOST']==='updates.cryosoft.co.ke'){
     $conn = new mysqli('den1.mysql5.gear.host', 'agrikenya', 'Fk2296!pV_l4', 'agrikenya');
 }
     else{
