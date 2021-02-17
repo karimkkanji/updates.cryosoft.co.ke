@@ -24,13 +24,33 @@ $sqlteleg = 'SELECT telegram_id FROM telegram_notifs WHERE telegram_id IS NOT NU
     $resultteleg = $conn->query($sqlteleg);
     if ($resultteleg->num_rows > 0) {
         while ($rowteleg = $resultteleg->fetch_assoc()) {
-            $user= $rowteleg['telegram_id'];
-            $payload = file_get_contents($requrl . "sendMessage?chat_id=" . $user . "&text=" . $message . "&parse_mode=HTML");
-            if ($payload) {
-                http_response_code(200);
-            } else {
-                http_response_code(202);
+            $sql_lastrun = "SELECT * from last_update WHERE id ='1'";
+            $result_last = $conn->query($sql_lastrun);
+            if($result_last->num_rows>0){
+                while($row_last_run=$result_last->fetch_assoc()){
+                    if($percentage>$row_last_run['percentage']){
+                        if(updateProgress($conn,$percentage,$now)){
+                            $user= $rowteleg['telegram_id'];
+                            $payload = file_get_contents($requrl . "sendMessage?chat_id=" . $user . "&text=" . $message . "&parse_mode=HTML");
+                            if ($payload) {
+                                http_response_code(200);
+                            } else {
+                                http_response_code(202);
+                            }
+                        }
+                    }
+                }
             }
+
+
+        }
+    }
+    function updateProgress($conn,$percentage,$now){
+        $sql ="UPDATE last_update SET percentage='$percentage',last_run_time='$now' WHERE id='1'";
+        if ($conn->query($sql) === TRUE) {
+            return true;
+        } else {
+            return false;
         }
     }
 ?>
