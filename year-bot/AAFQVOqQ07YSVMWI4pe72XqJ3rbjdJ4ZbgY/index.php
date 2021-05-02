@@ -22,7 +22,7 @@ foreach ($jsonIterator as $key => $val) {
         }
         if($key==='text'){
             if($val==='/start'){
-                $sql = "SELECT * where telegram_id = '$userId'";
+                $sql = "SELECT * FROM telegram_notifs where telegram_id = '$userId'";
                 $result = $conn->query($sql);
                 if ($result->num_rows >0) {
                     $htmlcode =urlencode("<b>You are already REGISTERED</b>");
@@ -36,7 +36,7 @@ foreach ($jsonIterator as $key => $val) {
                         $htmlcode =urlencode("<b>Welcome to Year Progress.</b>\n\nYou will receive Year Progress Updates Daily\n\nPowered by <a href='https://cryosoft.co.ke'>Cryosoft Corporation</a>");
                     }
                     else{
-                        $htmlcode =urlencode("<b>An error has occured.</b>\nYou will NOT receive Year Progress Updates Daily\n\nPowered by <a href='https://cryosoft.co.ke'>Cryosoft Corporation</a>");
+                        $htmlcode =urlencode("<b>An error has occured.</b>\n\nYou will NOT receive Year Progress Updates.\n\nTry the following to solve the problem:\n 1. Set a <a href='https://telegram.org/faq#q-what-are-usernames-how-do-i-get-one'>username</a> and try again\n\nPowered by <a href='https://cryosoft.co.ke'>Cryosoft Corporation</a>");
                     }
                 }
                     $payload =  file_get_contents($requrl."sendMessage?chat_id=".$userId."&text=".$htmlcode."&parse_mode=HTML");
