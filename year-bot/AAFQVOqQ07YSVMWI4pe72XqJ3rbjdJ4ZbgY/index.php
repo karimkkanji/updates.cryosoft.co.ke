@@ -31,6 +31,9 @@ foreach ($jsonIterator as $key => $val) {
                 $stmt = $conn->prepare("INSERT INTO telegram_notifs(telegram_username,telegram_id) VALUES (?, ?)");
                     $stmt->bind_param("ss", $username, $id);
                     $username = $usernameTg;
+                    if($username==''){
+                        $username=NULL;
+                    }
                     $id =$userId;
                     if ($stmt->execute()) {
                         $htmlcode =urlencode("<b>Welcome to Year Progress.</b>\n\nYou will receive Year Progress Updates Daily\n\nPowered by <a href='https://cryosoft.co.ke'>Cryosoft Corporation</a>");
