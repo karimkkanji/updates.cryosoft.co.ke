@@ -18,13 +18,14 @@ for ($num; $num--; $num>0){
 for ($remaining; $remaining--; $remaining>0){
     $message.=$incomplete;
 }
-$message.="\t<b>".floor($percentage)."%</b>";
+$percentage =floor($percentage);
+$message.="\t<b>".$percentage."%</b>";
 $message=urlencode($message);
 $sql_lastrun = "SELECT * from last_update WHERE id ='1'";
 $result_last = $conn->query($sql_lastrun);
 if($result_last->num_rows>0) {
     while ($row_last_run = $result_last->fetch_assoc()) {
-        if(floor($percentage)>$row_last_run['percentage']){
+        if($percentage>$row_last_run['percentage']){
             if(updateProgress($conn,$percentage,$now)) {
                 $sqlteleg = 'SELECT telegram_id FROM telegram_notifs WHERE telegram_id IS NOT NULL';
                 $resultteleg = $conn->query($sqlteleg);
