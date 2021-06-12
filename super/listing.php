@@ -181,11 +181,12 @@ else{
                                     $appid = mysqli_real_escape_string($conn,$_POST["project_id"]);
                                     $project_name = mysqli_real_escape_string($conn,$_POST["name_update"]);
                                     $project_link = mysqli_real_escape_string($conn,$_POST["url_update"]);
+                                    $project_category = mysqli_real_escape_string($conn,$_POST["category_update"]);
                                     $project_lead = mysqli_real_escape_string($conn,$_POST["project_lead_update"]);
                                     $project_stage = mysqli_real_escape_string($conn,$_POST["stage_update"]);
                                     $project_description = mysqli_real_escape_string($conn,$_POST["description_update"]);
                                     date_default_timezone_set("Africa/Nairobi");
-                                        $sql = "UPDATE projects_list SET name='$project_name',link='$project_link',description='$project_description',publisher='$project_lead',stage='$project_stage',date_modified=NOW() WHERE id='$appid'";
+                                        $sql = "UPDATE projects_list SET name='$project_name',link='$project_link',category='$project_category',description='$project_description',publisher='$project_lead',stage='$project_stage',date_modified=NOW() WHERE id='$appid'";
                                     if ($conn->query($sql) === TRUE) {
                                         echo "<div class='alert alert-success'>Project $project_name updated successfully!</div>";
                                     } else {
@@ -225,14 +226,15 @@ else{
                         <div class="card-body">
                             <?php
                             if(isset($_POST['add'])) {
-                                $stmt = $conn->prepare("INSERT INTO projects_list(name, link, description, publisher, stage,date_created,date_modified) VALUES (?,?,?,?,?,NOW(),NOW())");
+                                $stmt = $conn->prepare("INSERT INTO projects_list(name, link, description,category, publisher, stage,date_created,date_modified) VALUES (?,?,?,?,?,?,NOW(),NOW())");
                                 $project_name = $_POST["project_name"];
                                 $project_link = $_POST["url"];
                                 $project_lead = $_POST["project_lead"];
                                 $project_stage = $_POST["stage"];
                                 $project_description = $_POST["description"];
+                                $category = $_POST["category"];
                                 date_default_timezone_set("Africa/Nairobi");
-                                $stmt->bind_param("sssss", $project_name,$project_link,$project_description,$project_lead,$project_stage);
+                                $stmt->bind_param("ssssss", $project_name,$project_link,$project_description,$category,$project_lead,$project_stage);
                                 if ($stmt->execute()) {
                                     echo "<div class='alert alert-success'>Project has been added successfully!</div>";
                                 } else {
@@ -252,7 +254,7 @@ else{
                                 </div>
                                 <div class="form-group">
                                 <label for="url">Project Lead</label>
-                                <input class="form-control" type="text" placeholder="Project Lead" required="" name="project_lead" id="project_lead></div>
+                                <input class="form-control" type="text" placeholder="Project Lead" required="" name="project_lead" id="project_lead"></div>
                                 <div class="form-group">
                                 <label for="stage">Stage</label>
                                 <select class="form-control" name="stage" id="stage">
@@ -262,6 +264,18 @@ else{
                                 <option value="Published">Published</option>
                                 <option value="Discontinued">Discontinued</option>
                                 <option value="Hidden">Hidden</option>
+                                </select></div>
+                                <div class="form-group">
+                                <label for="stage">Project Category</label>
+                                <select class="form-control" name="category" id="category">
+                                <option value="Website" selected="">Website</option>
+                                <option value="Web App">Web App</option>
+                                <option value="Progressive Web App (PWA)">Progressive Web App (PWA)</option>
+                                <option value="Android App">Android App</option>
+                                <option value="iOS App">iOS App</option>
+                                <option value="API">API</option>
+                                <option value="Desktop App">Desktop App</option>
+                                <option value="Uncategorised">Uncategorised</option>
                                 </select></div>
                                 <div class="form-group">
                                 <label for="description">Description</label>
@@ -285,6 +299,7 @@ else{
                                         <th>id</th>
                                         <th>Name</th>
                                         <th>Link</th>
+                                        <th>Category</th>
                                         <th>Description</th>
                                         <th>Project Lead&nbsp;</th>
                                         <th>Stage</th>
@@ -297,9 +312,23 @@ else{
                                 if ($result->num_rows > 0) {
                                     // output data of each row
                                     while($row = $result->fetch_assoc()) {
+                                        $categoryColor="badge badge-danger";
+                                        $category=$row['category'];
+                                        if($category==null){$category="Uncategorised";}
+                                        switch($row['category']){
+                                            case 'Website':$categoryColor="badge badge-primary";break;
+                                            case 'Web App':$categoryColor="badge badge-secondary";break;
+                                            case 'Progressive Web App (PWA)':$categoryColor="badge badge-success";break;
+                                            case 'Android App':$categoryColor="badge badge-light";break;
+                                            case 'iOS App':$categoryColor="badge badge-dark";break;
+                                            case 'API':$categoryColor="badge badge-info";break;
+                                            case 'Desktop App':$categoryColor="badge badge-warning";break;
+                                            case 'Uncategorised':$categoryColor="badge badge-danger";break;
+                                        }
                                     echo " <tr> <td>".$row['id']."</td>
                                         <td>".$row['name']."</td>
                                         <td>".$row['link']."</td>
+                                        <td><span style='font-size:14px' class='badge ".$categoryColor."'>".$category."</span></td>
                                         <td>".$row['description']."</td>
                                         <td>".$row['publisher']."</td>
                                         <td>".$row['stage']."</td>

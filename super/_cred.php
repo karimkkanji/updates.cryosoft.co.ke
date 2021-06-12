@@ -8,8 +8,8 @@ function handleError($errno, $errstr) {
 //set_error_handler("handleError");
 
 if($_SERVER['HTTP_HOST']==='localhost'){
-    //$conn = new mysqli('localhost','root','','updates');
-    $conn = new mysqli('den1.mysql4.gear.host', 'updatescry', 'Uz078j-Lfb!7', 'updatescry');
+    $conn = new mysqli('localhost','root','','updates');
+    //$conn = new mysqli('den1.mysql4.gear.host', 'updatescry', 'Uz078j-Lfb!7', 'updatescry');
 }
 else if($_SERVER['HTTP_HOST']==='updates.cryosoft.co.ke'){
     $conn = new mysqli('den1.mysql4.gear.host', 'updatescry', 'Uz078j-Lfb!7', 'updatescry');
